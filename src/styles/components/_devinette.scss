@@ -1,0 +1,31 @@
+.devinette {
+  position: relative;
+  .papyrus {
+    max-width: 400px;
+  }
+
+  .papyrus-text {
+    .text {
+      position: absolute;
+      width: 60%;
+      left: 15%;
+      right: 15%;
+      top: 10%;
+      bottom: 10%;
+      z-index: 10;
+      overflow-y:scroll;
+    }
+    .answer {
+        position: absolute;
+        width: 40%;
+        bottom: 8%;
+        left: 25%;
+        border-radius: 5px;
+        background-color: $color-4;
+        color: $color-1;
+        border: none;
+        padding: 5px 3px;
+
+    }
+  }
+}
