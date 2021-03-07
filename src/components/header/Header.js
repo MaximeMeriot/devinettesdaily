@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 const Header = () => {
     return (
         <div className='header navbar navbar-dark bg-dark'>
-            <img src="logo192.png" class="logo" alt=""/>
+            <img src="logo192.png" className="logo" alt=""/>
             <Navigation />
             <Connexion />
         </div>

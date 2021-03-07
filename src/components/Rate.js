@@ -1,64 +1,79 @@
 import React from "react";
+import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 function roundHalf(num) {
-  return Math.round(num * 2) / 2;
+    return Math.round(num * 2) / 2;
 }
 
 function calcRate(rates) {
-  var len = rates.length;
-  var total = 0;
-  for (let i = 0; i < len; i++) {
-    total += rates[i];
-  }
-  return roundHalf(total / len);
+    var len = rates.length;
+    var total = 0;
+    for (let i = 0; i < len; i++) {
+        total += rates[i];
+    }
+    return roundHalf(total / len);
 }
 
 function showRate(rate) {
-  var rating = "<div>";
-  for (let i = 1; i <= 5; i++) {
-    if (i === rate) {
-      console.log("OKKKK");
-      let whiteStar = i;
-      let yellowStar = 5 - i;
-      for (let j = 0; j <= yellowStar; j++) {
-        rating += "Y";
-      }
-      for (let j = 0; j <= whiteStar; j++) {
-        rating += "W";
-      }
-      break;
-    }
-    if (i < rate && rate < i + 1) {
-      let whiteStar = 5 - (i + 1);
-      let yellowStar = i;
 
-      for (let j = 1; j <= yellowStar; j++) {
-        rating += "<i className='fa fa-star' aria-hidden='true'></i>";
-      }
-      rating += "H";
-      for (let j = 1; j <= whiteStar; j++) {
-        rating += "W";
-      }
-      break;
-    }
-  }
+    let plainStars = Math.floor(rate);
+    const halfStar = rate - plainStars !== 0;
+    let whiteStar = 5 - rate;
+    let starSize = 20
+    var count = 1;
 
-  rating += "</div>";
-  const displayRate = () => {
-    return <div>rating</div>;
-  };
+    if (halfStar) whiteStar -= 1;
+
+    const stars = [];
+
+    for (let i = 0; i < plainStars; i++) {
+        stars.push( <BsStarFill className="star-rate" size={starSize} data-id={count} onMouseOver={colorizePreviousStars} /> );
+        count++;
+    }
+
+    if (halfStar) {
+        stars.push( <BsStarHalf className="star-rate" size={starSize} data-id={count}/> );
+        count++;
+    }
+
+    for (let i = 0; i < whiteStar; i++) {
+        stars.push( <BsStar className="star-rate" size={starSize} data-id={count}/> );
+        count++;
+    }
+
+    return (
+        stars.map((value) => {
+            return ( <> { value } </>)
+        })
+    )
+}
+
+function colorizePreviousStars(e) {
+    var stars = document.getElementsByClassName('star-rate');
+    let idHover = e.target.getAttribute('data-id');
+    // console.log()
+    if (idHover == null){
+        console.log(idHover)
+        Array.from(stars).forEach((star) => {
+                star.classList.remove('orange-star');
+            
+        });
+    }
+    Array.from(stars).forEach((star) => {
+            
+        if (star.getAttribute('data-id') <= idHover){
+            star.classList.add('orange-star');
+        }
+        
+    })
 }
 
 const Rate = (props) => {
-  return (
-    <div>
-      <script
-        src="https://kit.fontawesome.com/f4f546feb0.js"
-        crossorigin="anonymous"
-      ></script>
-      {showRate(calcRate(props.rates))}
-    </div>
-  );
+    return ( 
+        <div className='yellowstars'>
+        { showRate(calcRate(props.rates)) } 
+        </div>
+    );
 };
 
 export default Rate;

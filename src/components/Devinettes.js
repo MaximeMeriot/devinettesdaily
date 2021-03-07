@@ -24,7 +24,7 @@ const Devinettes = () => {
     <div className="devinette" data-id="">
       {data[current] && (
         <Fragment>
-          <img src="papyrus.png" class="papyrus" alt="" />
+          <img src="papyrus.png" className="papyrus" alt="" />
           <div className="papyrus-text absolute-center">
             <p className="text absolute-center">{data[current].joke}</p>
             {answer && (
@@ -41,7 +41,8 @@ const Devinettes = () => {
               Voir la réponse
             </button>
           </div>
-          <Rate rates={data[current].rate} />
+          <div className="rate-container"><Rate rates={data[current].rate} /></div>
+          
         </Fragment>
       )}
     </div>

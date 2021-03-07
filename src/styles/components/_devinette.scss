@@ -36,4 +36,29 @@
       margin-right: auto; 
     }
   }
+  .rate-container {
+
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 14px;
+    color: #FFFFFF;
+    font-family: Brush Script MT;
+    padding: 6px 8px;
+    background-color: #bdbdbd;
+    border: solid $color-5 4px;
+    text-decoration: none;
+    display: inline-block;
+    
+    text-align: center;
+
+    .yellowstars {
+        color : rgb(240, 240, 18);
+        cursor: pointer;
+
+        .orange-star {
+          color : orange;
+        }
+      }
+  }
+  
 }
