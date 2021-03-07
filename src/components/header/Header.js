@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 
 const Header = () => {
     return (
-        <div className='header'>
+        <div className='header navbar navbar-dark bg-dark'>
             <img src="logo192.png" class="logo" alt=""/>
             <Navigation />
             <Connexion />

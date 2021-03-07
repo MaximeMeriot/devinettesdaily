@@ -1,31 +1,39 @@
 .devinette {
   position: relative;
   .papyrus {
-    max-width: 400px;
+    max-width: 100%;
   }
 
   .papyrus-text {
     .text {
-      position: absolute;
       width: 60%;
-      left: 15%;
-      right: 15%;
-      top: 10%;
+      top: 15%;
       bottom: 10%;
       z-index: 10;
-      overflow-y:scroll;
     }
-    .answer {
-        position: absolute;
+    .answer-button {
         width: 40%;
-        bottom: 8%;
-        left: 25%;
+        bottom: 15%;
         border-radius: 5px;
         background-color: $color-4;
         color: $color-1;
-        border: none;
+        border: none;   
         padding: 5px 3px;
+        z-index: 12;
+        cursor: pointer;
+    }
 
+    .answer-text {
+      width: 60%;
+      bottom: 25%;
+    }
+
+    .absolute-center {
+      position: absolute;
+      left: 0; 
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
     }
   }
 }
