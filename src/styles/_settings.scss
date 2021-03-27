@@ -2,16 +2,22 @@
 
 $font-1: "Poppins", sans-serif;
 
-$color-1: #61dafb;
-$color-2: #f7f7f7;
-$color-3: #282c34;
+// $color-1: #61dafb;
+// $color-2: #f7f7f7;
+// $color-3: #282c34;
+// $color-4: rgb(32, 35, 42);
+// $color-5: #2f4063;
+
+$color-1: #1CBBB4;
+$color-2: #FFF568;
+$color-3: #F5989D;
 $color-4: rgb(32, 35, 42);
 $color-5: #2f4063;
 
 body {
   font-family: $font-1;
-  color: $color-3;
-  background-color: $color-2;
+  color: $color-5;
+  background-color: $color-1;
   font-size: 14px;
   margin: 0;
 }

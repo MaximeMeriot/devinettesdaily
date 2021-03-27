@@ -1,0 +1,36 @@
+.socials-grid {
+
+    width: 90%;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    background-color: $color-2;
+    border-radius: 2px;
+
+        h1 {
+            font-size:1.2rem;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 1rem;
+        }
+
+    .flex-socials {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .button-sn {
+
+            border: none;
+            border-style: none;
+            background: none;
+            .logo-sn {
+                max-width: 50px;
+                height:auto;
+            }
+        }
+    }
+}    

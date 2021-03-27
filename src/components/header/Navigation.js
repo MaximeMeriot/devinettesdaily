@@ -16,8 +16,13 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/liste-blagues" activeClassName="nav-active">
-            Liste de blagues
+          <NavLink exact to="/meilleures-devinettes" activeClassName="nav-active">
+            Les meilleures devinettes
+          </NavLink>
+        </li>
+        <li className="deposit button-style">
+          <NavLink exact to="/deposer-une-devinette">
+            Déposer une devinette
           </NavLink>
         </li>
       </ul>

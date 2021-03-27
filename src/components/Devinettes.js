@@ -26,14 +26,14 @@ const Devinettes = () => {
         <Fragment>
           <img src="papyrus.png" className="papyrus" alt="" />
           <div className="papyrus-text absolute-center">
-            <p className="text absolute-center">{data[current].joke}</p>
+            <p className="text absolute-center bold">{data[current].joke}</p>
             {answer && (
-              <p className="answer-text absolute-center">
+              <p className="answer-text absolute-center bold">
                 {"Réponse : " + data[current].answer}
               </p>
             )}
             <button
-              className="answer-button absolute-center"
+              className="answer-button button-style absolute-center bold"
               onClick={() => {
                 setAnswer(true);
               }}
@@ -41,7 +41,9 @@ const Devinettes = () => {
               Voir la réponse
             </button>
           </div>
-          <div className="rate-container"><Rate rates={data[current].rate} /></div>
+          <div className="flex-center">
+            <div className="rate-container"><Rate rates={data[current].rate} /></div>
+          </div>
           
         </Fragment>
       )}

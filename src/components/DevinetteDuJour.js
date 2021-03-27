@@ -4,7 +4,7 @@ import Devinettes from "./Devinettes";
 const DevinetteDuJour = () => {
   return (
     <div>
-      <h1 className="center">La blague/devinette du jour</h1>
+      <h1 className="center text-bordered">La blague/devinette du jour</h1>
       <Devinettes />
     </div>
   );

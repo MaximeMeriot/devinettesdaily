@@ -27,36 +27,39 @@ function showRate(rate) {
 
   for (let i = 0; i < plainStars; i++) {
     stars.push(
+      <div className="star-rate" data-id={count} 
+      onMouseOver={colorizePreviousStars}>
       <BsStarFill
-        className="star-rate"
         size={starSize}
-        data-id={count}
-        onMouseOver={colorizePreviousStars}
+        
       />
+      </div>
     );
     count++;
   }
 
   if (halfStar) {
     stars.push(
+      <div className="star-rate" data-id={count} 
+      onMouseOver={colorizePreviousStars}>
       <BsStarHalf
-        className="star-rate"
         size={starSize}
-        data-id={count}
-        onMouseOver={colorizePreviousStars}
+
       />
+      </div>
     );
     count++;
   }
 
   for (let i = 0; i < whiteStar; i++) {
     stars.push(
+      <div className="star-rate" data-id={count} 
+      onMouseOver={colorizePreviousStars}>
       <BsStar
-        className="star-rate"
         size={starSize}
-        data-id={count}
-        onMouseOver={colorizePreviousStars}
+
       />
+      </div>
     );
     count++;
   }
@@ -68,8 +71,8 @@ function showRate(rate) {
 
 function colorizePreviousStars(e) {
   var stars = document.getElementsByClassName("star-rate");
+  console.log(e)
   let idHover = e.target.getAttribute("data-id");
-  // console.log()
   if (idHover == null) {
     console.log(idHover);
     Array.from(stars).forEach((star) => {
